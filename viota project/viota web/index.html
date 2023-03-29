@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>viotá</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- cdn for awesome font-->
+	<script src="https://kit.fontawesome.com/6be47a062c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<header>
+		<nav>
+			<a href="#" class="nav-item logo">Viotá<span>.</span></a>
+
+			<ul class="nav-item menu-nav">
+				<li><a href="#" class="nav-item nav-link">Home</a></li>
+				<li><a href="#about" class="nav-item nav-link">About</a></li>
+				<li><a href="#product" class="nav-item nav-link">Product</a></li>
+				<li><a href="#review" class="nav-item nav-link">Review</a></li>
+				<li><a href="#contact" class="nav-item nav-link">Contact Us</a></li>
+			</ul>
+
+			<div class="nav-item icons-nav">
+				<a href="#wishList"class="fas fa-search"></a>
+				<a href="#wishList" class="fas fa-heart"></a>
+				<a href="#cart" class="fas fa-shopping-cart"></a>
+				<a href="#profile" class="fas fa-user"></a>
+			</div>
+
+			<div class="nav-item menu-toggle">
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+			</div>
+			
+		</nav>
+	</header>
+
+
+	<section class="home" id="home">
+		
+		<div class="home-slide fade">
+			<div class="home-slide-item content">
+				<h1 id="HomeH10">Exclusive Funiture</h1>
+				<h2>Handmade for your home</h2>
+				<a href="#product" class="home-buttonS">Shop Now</a>
+			</div>
+		</div>
+		
+		<div class="home-slide fade">
+			<div class="home-slide-item content">
+				<h1 id="HomeH11">Make Your Comfort</h1>
+				<h2 id="HomeH21">Is Our Happines</h2>
+				<a href="#product" class="home-buttonS">shop now</a>
+			</div>
+		</div>
+
+
+		<a class="prev" onclick="plusSlides(-1)">❮</a>
+		<a class="next" onclick="plusSlides(1)">❯</a>
+	</section>
+
+	<script type="text/javascript">
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("home-slide");
+			let homebg = document.getElementsByClassName("home");
+			// console.log(slides)
+			if (n > slides.length) {
+				slideIndex = 1
+			}    
+			if (n < 1) {
+				slideIndex = slides.length
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			slides[slideIndex-1].style.display = "block";
+			if(slideIndex===1){
+				document.getElementsByClassName("home-slide")[0].style.backgroundImage = "url('img/home bg/slide-1.jpg')"
+				document.getElementById("HomeH10").style.color = "var(--black)"
+			}else if(slideIndex===2){
+				document.getElementsByClassName("home-slide")[1].style.backgroundImage = "url('img/home bg/slide-2.jpg')"
+				document.getElementById("HomeH11").style.color = "var(--white)"
+				document.getElementById("HomeH21").style.color = "var(--white)"
+			}
+		}
+	</script>
+
+
+	<section class="producth">
+		<div class="producth-heading">
+			<h1>Product Shop</h1>
+		</div>
+
+		<div class="producth-sub-heading">
+			<h2>Popular Item</h2>
+			<a href="#">See All</a>
+		</div>
+
+		<div class="producth-content">
+
+			<div class="producth-content-item box">
+
+				<div class="producth-content-item wishList">
+					<a class="fas fa-heart"></a>
+				</div>
+
+				<div class="producth-content-item box-item image">
+					<a href="#"><img src="img/products/product-1.jpg" alt=""></a>
+				</div>
+				
+
+				<div class="producth-content-item box-text">
+					<div class="producth-content-item box-text-item cart">
+						<a href="#home" class="fas fa-shopping-cart"></a>
+					</div>
+
+					<div class="producth-content-item box-text-item title-product">
+						<h3>Soft Funiture</h3>
+						<span>$150</span>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="producth-content-item box">
+
+				<div class="producth-content-item wishList">
+					<a class="fas fa-heart"></a>
+				</div>
+
+				<div class="producth-content-item box-item image">
+					<a href="#"><img src="img/products/product-2.jpg" alt=""></a>
+				</div>
+				
+
+				<div class="producth-content-item box-text">
+					<div class="producth-content-item box-text-item cart">
+						<a href="#home" class="fas fa-shopping-cart"></a>
+					</div>
+
+					<div class="producth-content-item box-text-item title-product">
+						<h3>Soft Funiture</h3>
+						<span>$150</span>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="producth-content-item box">
+
+				<div class="producth-content-item wishList">
+					<a class="fas fa-heart"></a>
+				</div>
+
+				<div class="producth-content-item box-item image">
+					<a href="#"><img src="img/products/product-3.jpg" alt=""></a>
+				</div>
+				
+
+				<div class="producth-content-item box-text">
+					<div class="producth-content-item box-text-item cart">
+						<a href="#home" class="fas fa-shopping-cart"></a>
+					</div>
+
+					<div class="producth-content-item box-text-item title-product">
+						<h3>Soft Funiture</h3>
+						<span>$150</span>
+					</div>
+
+				</div>
+			</div>
+
+			
+
+
+		</div>
+
+
+	</section>
+
+	<section class="about" id="about">
+
+		<div class="about-heading">
+			<h1>About Our Store</h1>
+		</div>
+
+		<div class="about-content">
+			<div class="about-content-item about-img">
+				<img src="img/about/luv.jpg" alt="about us">
+			</div>
+
+			<div class="about-content-item about-text">
+				<h2>why choose us?</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem cumque sit nemo pariatur corporis perspiciatis aspernatur a ullam repudiandae autem asperiores quibusdam omnis commodi alias repellat illum, unde optio temporibus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				</p>
+
+				<a href="#" class="about-content-item about-button">learn more</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="icons">
+
+		<div class="icons-container">
+			<img src="img/about/about icons/icon-1.png" alt="">
+			<div class="about-info">
+				<h3>free delivery</h3>
+				<span>on all orders</span>
+			</div>
+		</div>
+
+		<div class="icons-container">			
+			<img src="img/about/about icons/icon-2.png" alt="">
+			<div class="about-info">
+				<h3>3 days returns</h3>
+				<span>moneyback guarantee</span>
+			</div>
+		</div>
+
+		<div class="icons-container">
+			<img src="img/about/about icons/icon-3.png" alt="">
+			<div class="about-info">
+				<h3>offer & gifts</h3>
+				<span>on all orders</span>
+			</div>
+		</div>
+
+		<div class="icons-container">
+			<img src="img/about/about icons/icon-4.png" alt="">
+			<div class="about-info">
+				<h3>secure paymens</h3>
+				<span>protected by paypal</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="review" id="review">
+		<div class="review-heading">
+			<h1>Customer's Review</h1>
+		</div>
+
+		<div class="review-box">
+			<div class="review-box-item box">
+				<div class="review-box-item stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+
+				<div class="review-box-item text">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+				</div>
+
+				<div class="review-box-item user">
+					<img src="img/review/user-1.jpg" alt="">
+					<div class="review-box-item user-info">
+						<h3>Min Yoongi</h3>
+						<span>happy customer</span>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="review-box-item box">
+				<div class="review-box-item stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+
+				<div class="review-box-item text">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+				</div>
+
+				<div class="review-box-item user">
+					<img src="img/review/user-2.jpg" alt="">
+					<div class="review-box-item user-info">
+						<h3>Kim Seokjin</h3>
+						<span>happy customer</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="review-box-item box">
+				<div class="review-box-item stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+
+				<div class="review-box-item text">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+				</div>
+
+				<div class="review-box-item user">
+					<img src="img/review/user-3.jpg" alt="">
+					<div class="review-box-item user-info">
+						<h3>Jeon Jungkook</h3>
+						<span>happy customer</span>
+					</div>
+				</div>
+			</div>
+
+
+		</div>	
+	</section>
+
+	<footer id="contact">
+		
+		<div class="footer-container">
+
+			<div class="footer-container-item ashop">
+				<h2>Viotá<span>.</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<div class="footer-container-item social">
+					<a href="#" class="fa-brands fa-youtube"></a>
+					<a href="#" class="fa-brands fa-facebook"></a>
+					<a href="#" class="fa-brands fa-instagram"></a>
+					<a href="#" class="fa-brands fa-twitter"></a>
+					<a href="#" class="fa-brands fa-pinterest"></a>
+					<a href="#" class="fa-brands fa-github"></a>
+				</div>
+				
+			</div>
+
+			<div class="footer-container-item box">
+				<h3>Quick Links</h3>
+				<a href="#">home</a>
+				<a href="#about">about</a>
+				<a href="#profile">products</a>
+				<a href="#review">review</a>
+				<a href="#contact">contact</a>
+			</div>
+
+			<div class="footer-container-item box">
+				<h3>Extra Links</h3>
+				<a href="#profile">Profile</a>
+				<a href="#cart">Cart</a>
+				<a href="#wishlist">Wish List</a>
+			</div>
+
+			<div class="footer-container-item box" id="contactinfo">
+				<h3>Contact Info</h3>
+				<a href="#">+123-456-7890</a>
+				<a href="#">abcdefghily@gmail.com</a>
+				<a href="#">Jakarta, Indonesia - 77777</a>
+				<img src="img/footer/payment.png" alt="Payment">
+			</div>
+			
+		</div>
+
+		<div class="footer-copyright">
+			Copyright © 2022 Vin| All Rights Reserved.
+
+			<ul class="footer-copyright-item link">
+				<li><a href="#">Terms Of Use</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+
+			</ul>
+
+		</div>
+
+	
+
+	</footer>
+	
+
+
+</body>
+</html>
