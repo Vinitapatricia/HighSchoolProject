@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    background: darkgray;
+    background-image: url("https://source.unsplash.com/1600x900/?nature/cloud");
+}
+
+.card{
+    background: rgba(0,0,0,0.8);
+    padding: 2rem;
+    border-radius: 30px;
+    width: 70%;
+    max-width: 450px;
+    margin: 1rem;
+    color: white;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search .search-btn{
+    padding: 0%;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    height: 2.5rem;
+    width: 2.8rem;
+    outline: none;
+    transition: 0.2s ease-in-out;
+}
+.search .search-btn svg{
+    width: 60%;
+    height: 60%;
+}
+
+.search .search-btn:hover{
+    background-color: #7c7c7c2b;
+}
+
+.search .search-bar{
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    width: 90%;
+    padding-left: 1.5rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-right: 0.8rem;
+    background-color: #7c7c7c2b;
+    color: white;
+    font-size: 120%;
+}
+
+.weather .city{
+    margin-top: 1rem;
+}
+
+.weather h1{
+    font-size: 250%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather .icon{
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.icon-img{
+    width: 10%;
+    height: 10%;
+    position: static;
+    margin-top: -10px;
+    margin-right: 5px;
+    margin-left: -15px;
+}
+
+.weather .humidity{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.weather .wind{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+@media screen and (max-width: 576px) {
+
+}
