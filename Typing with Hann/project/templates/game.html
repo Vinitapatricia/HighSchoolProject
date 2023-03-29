@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='game_style.css')}}">
+	{% endblock style %}
+
+{% block js %}
+
+	<script type="text/javascript" src="{{url_for('static', filename='game_script.js')}}"></script>
+
+{% endblock js %}
+
+{% block content %}
+
+	<div class="container">
+		<canvas id="canvas" width="350vh" height="560vh"></canvas>
+	</div>
+	
+{% endblock content %}

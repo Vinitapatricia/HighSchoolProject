@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+	<!-- title font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Special+Elite&display=swap" rel="stylesheet">
+
+{% endblock style %}
+
+{% block js %}
+	<script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+{% endblock js %}
+
+{% block content %}
+	<header>
+		<nav>
+			<a href="#home" class="nav-item logo"><img src="{{url_for('static', filename = 'img/Hann1.png')}}"></a>
+
+			<ul class="nav-item menu-nav">
+				<li><a href="#" class="nav-item nav-link">Home</a></li>
+				<li><a href="#about" class="nav-item nav-link">About</a></li>
+				<li><a href="#contact" class="nav-item nav-link">Contact Us</a></li>
+			</ul>
+
+			<div class="nav-item menu-toggle">
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+			</div>
+			
+		</nav>
+	</header>
+
+	<section class="home" id="home">
+		
+		<div class="home-slide fade">
+			<div class="home-slide-item content">
+				<h1 id="HomeH10">Defend your camp</h1>
+				<h2>Learn how to defeat your enemy accurately</h2>
+				<a href="register" class="home-buttonS">Play now</a>
+			</div>
+		</div>
+		
+		<div class="home-slide fade">
+			<div class="home-slide-item content">
+				<h1 id="HomeH11">Colosseum Incoming!</h1>
+				<h2 id="HomeH21">Battle against other playes and claim the throne</h2>
+				<a href="register" class="home-buttonS">Play now</a>
+			</div>
+		</div>
+
+
+		<button class="prev" onclick="plusSlides(-1)">❮</button>
+		<button class="next" onclick="plusSlides(1)">❯</button>
+	</section>
+
+	<script type="text/javascript">
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("home-slide");
+			let homebg = document.getElementsByClassName("home");
+			// console.log(slides)
+			if (n > slides.length) {
+				slideIndex = 1
+			}    
+			if (n < 1) {
+				slideIndex = slides.length
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			slides[slideIndex-1].style.display = "block";
+			if(slideIndex===1){
+				document.getElementsByClassName("home-slide")[0].style.backgroundImage = "url('static/img/background/landing page bg1.png')"
+				document.getElementsByClassName("home-slide")[1].style.backgroundPosition = "top right"
+				document.getElementById("HomeH10").style.color = "var(--white)"
+			}else if(slideIndex===2){
+				document.getElementsByClassName("home-slide")[1].style.backgroundImage = "url('static/img/background/landing page bg2.png')"
+				document.getElementsByClassName("home-slide")[1].style.backgroundPosition = "top right"
+				
+
+				document.getElementById("HomeH11").style.color = "var(--white)"
+				document.getElementById("HomeH21").style.color = "var(--white)"
+			}
+		}
+	</script>
+
+	<section class="about" id="about">
+		<div class="about-heading">
+			<h1>Game Description</h1>
+		</div>
+
+		<div class="about-content">
+			<div class="about-content-item about-img">
+				<img src="{{url_for('static', filename = 'img/about/luv.jpg')}}" alt="about us">
+			</div>
+
+			<div class="about-content-item about-text">
+				<h2>Typing with Hann</h2>
+				<p>
+					You, a hero from other world, decide to venture across this unfamiliar world, where all your fantasy is real. Upon making your tent in the middle of a silent forest, you encounter a little girl who got lost there. After gaining her trust, she tell you her name, Hann. You try to interogate Hann with a friendly way, asking why's she here? Hann keeps stutering while answering, but deep inside you know that something is wrong. "Th..this fo-forest is da-dangerous, on-once you e-enter yo-u can't ge-get o-out". Hearing these words, you realise that both of you already trapped inside this dark dangerous forest and there's no way out. The mist around the forest has thickened as the sun goes down. The monster's footsteps, sounds can now be heard from all the corner. How long will you survive in this forest? Will you be able to escape safely with Hann?
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="about" id="about">
+
+		<div class="about-heading">
+			<h1>Know the Creator</h1>
+		</div>
+
+		<div class="about-content">
+			<div class="about-content-item about-img">
+				<img src="{{url_for('static', filename = 'img/about/luv.jpg')}}" alt="about us">
+			</div>
+
+			<div class="about-content-item about-text">
+				<h2>Creator's memmo</h2>
+				<p>
+					Hello, guys. Thanks for dropping by to this web game. We hope you enjoy your time, playing Typing with Hann. This game is based on a popular idle rpg game, but rather than using click to unleashing the character's skills, the player is required to type to do it. Don't worry about it, everytime you defeat a monster, a generous reward will be given. And we know that, most of you like the PVP genre so we introduce this arena or colloseum event. Feel free to invite your friends to play together. Who know you will meet your friend in the arena as the enemy. Haha good luck and we hope you like this game. For information, we're really sorry if there is any bug or what someover, since the game is made in one month. We know that one month is a long time, but for us students, who still have school until 4-5 in the afternoon, there's not much time left to make it. Anyway, enjoy your day.
+				</p>
+				<p>
+					~ Creator, SleepySheep
+				</p>
+			</div>
+		</div>
+	</section>
+
+
+	<footer id="contact">
+		
+		<div class="footer-container">
+
+			<div class="footer-container-item ashop">
+				<a href="#home"><img src="{{url_for('static', filename = 'img/Hann1.png')}}"></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<div class="footer-container-item social">
+					<a href="#" class="fa-brands fa-youtube"></a>
+					<a href="#" class="fa-brands fa-facebook"></a>
+					<a href="#" class="fa-brands fa-instagram"></a>
+					<a href="#" class="fa-brands fa-twitter"></a>
+					<a href="#" class="fa-brands fa-pinterest"></a>
+					<a href="#" class="fa-brands fa-github"></a>
+				</div>
+				
+			</div>
+
+			<div class="footer-container-item box" id="contactinfo">
+				<h3>Developer Info</h3>
+				<a href="#">+6281368340056</a>
+				<a href="#">vinitapatricia@gmail.com</a>
+				<a href="#">Palembang, Indonesia</a>
+			</div>
+			
+		</div>
+
+		<div class="footer-copyright">
+			Copyright © 2022 Vin| All Rights Reserved.
+
+			<ul class="footer-copyright-item link">
+				<li><a href="#">Terms Of Use</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+
+			</ul>
+
+		</div>
+	</footer>
+	
+
+{% endblock content%}
