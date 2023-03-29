@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='product_style.css')}}">
+{% endblock style %}
+
+{% block js %}
+	<script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+{% endblock js %}
+
+
+{% block content %}
+
+	<header>
+		<nav>
+			<a href="{{url_for('index')}}" class="nav-item logo">Viotá<span>.</span></a>
+
+			<ul class="nav-item menu-nav">
+				<li><a href="{{url_for('index')}}" class="nav-item nav-link">Home</a></li>
+				<li><a href="{{url_for('index')}}#about" class="nav-item nav-link">About</a></li>
+				<li><a href="#" class="nav-item nav-link">Product</a></li>
+				<li><a href="{{url_for('index')}}#review" class="nav-item nav-link">Review</a></li>
+				<li><a href="{{url_for('index')}}#contact" class="nav-item nav-link">Contact Us</a></li>
+			</ul>
+
+			<div class="nav-item icons-nav">
+				<!-- <a href="#wishList"class="fas fa-search"></a> -->
+				<a href="#wishList" class="fas fa-heart wishlist"></a>
+				<a href="#cart" class="fas fa-shopping-cart"></a>
+				<a href="{{url_for('register')}}" class="fas fa-user"></a>
+			</div>
+
+			<div class="nav-item menu-toggle">
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+			</div>
+			
+		</nav>
+	</header>
+
+	<section class="producth">
+		
+		<div class="producth-content">
+			{% for product in products %}
+				<div class="producth-content-item box">
+
+					<div class="producth-content-item wishList">
+						<a class="fas fa-heart"></a>
+					</div>
+
+					<div class="producth-content-item box-item image">
+						<a href=""><img src="static/img/products/{{product.image}}" alt=""></a>
+					</div>
+					
+
+					<div class="producth-content-item box-text">
+						
+						<div class="producth-content-item box-text-item title-product">
+							<h3>{{ product.name }}</h3>
+							<span>{{ product.price }}</span>
+						</div>
+
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		
+	</section>
+
+	<footer id="contact">
+		
+		<div class="footer-container">
+
+			<div class="footer-container-item ashop">
+				<h2>Viotá<span>.</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<div class="footer-container-item social">
+					<a href="#" class="fa-brands fa-youtube"></a>
+					<a href="#" class="fa-brands fa-facebook"></a>
+					<a href="#" class="fa-brands fa-instagram"></a>
+					<a href="#" class="fa-brands fa-twitter"></a>
+					<a href="#" class="fa-brands fa-pinterest"></a>
+					<a href="#" class="fa-brands fa-github"></a>
+				</div>
+				
+			</div>
+
+			<div class="footer-container-item box">
+				<h3>Quick Links</h3>
+				<a href="#">home</a>
+				<a href="#about">about</a>
+				<a href="#profile">products</a>
+				<a href="#review">review</a>
+				<a href="#contact">contact</a>
+			</div>
+
+			<div class="footer-container-item box">
+				<h3>Extra Links</h3>
+				<a href="#profile">Profile</a>
+				<a href="#cart">Cart</a>
+				<a href="#wishlist">Wish List</a>
+			</div>
+
+			<div class="footer-container-item box" id="contactinfo">
+				<h3>Contact Info</h3>
+				<a href="#">+123-456-7890</a>
+				<a href="#">abcdefghily@gmail.com</a>
+				<a href="#">Jakarta, Indonesia - 77777</a>
+				<img src="{{url_for('static', filename = 'img/footer/payment.png')}}" alt="Payment">
+			</div>
+			
+		</div>
+
+		<div class="footer-copyright">
+			Copyright © 2022 Vin| All Rights Reserved.
+
+			<ul class="footer-copyright-item link">
+				<li><a href="#">Terms Of Use</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+
+			</ul>
+
+		</div>
+	</footer>
+
+{% endblock content%}

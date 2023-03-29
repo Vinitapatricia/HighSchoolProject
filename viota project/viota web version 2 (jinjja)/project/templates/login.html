@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='login_style.css')}}">
+{% endblock style %}
+
+{% block content %}
+	<header>
+		<nav>
+			<a href="{{url_for('index')}}" class="nav-item logo">Viotá<span>.</span></a>
+			
+		</nav>
+	</header>
+
+	
+	<div class="main">
+		<div class="register">
+			<h2>Create a new free account</h2>
+				<form method="POST" action="">
+
+				<div class="form-group">
+					{{ form.username.label() }}
+					<br>
+					{% if form.username.errors %}
+
+						{{ form.username(class="input") }}
+
+						<div class="invalid-feedback">
+							
+							{% for error in form.username.errors %}
+
+								<span>{{ error }}</span>
+
+							{% endfor %}
+
+						</div>
+
+					{% else %}
+
+						{{ form.username(class="input") }}
+
+					{% endif %}
+				</div>
+
+			
+
+				<div class="form-group">
+					
+					{{ form.password.label() }}
+					<br>
+					{% if form.password.errors %}
+
+						{{ form.password(class="input") }}
+
+						<div class="invalid-feedback">
+							
+							{% for error in form.password.errors %}
+
+								<span>{{ error }}</span>
+
+							{% endfor %}
+
+						</div>
+
+					{% else %}
+
+						{{ form.password(class="input") }}
+
+					{% endif %}
+
+
+				</div>
+
+				<div class="form-check">
+					{{ form.remember() }}
+					{{ form.remember.label() }}
+				</div>
+
+
+				<div class="form-group">
+					{{ form.submit() }}
+				</div>
+
+				<div class="fmuted">
+					<a href="">Forget Password ? </a>
+				</div>
+				<br>
+
+				<div class="muted">
+					Didn't have an account ? <a href="{{url_for('register')}}">Sign Up</a>
+				</div>
+
+			</form>
+			
+		</div>
+	</div>
+	
+
+
+
+{% endblock content%}
