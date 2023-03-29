@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Offset</title>
+</head>
+<body>
+	<h1 id="heading">Hello World!</h1>
+
+	<!-- Jquery Lib -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- end Jquery -->
+
+	<script type="text/javascript">
+		let cnt = 0
+
+		function gerak(){
+			cnt += 1;
+
+			if (cnt <= 500){
+				$('#heading').offset({left : cnt});
+			}else if(cnt <= 900){
+				$('#heading').offset({top : cnt-500});
+			}
+
+			// console.log(cnt);
+			
+		}
+
+		setInterval(gerak, 10)
+
+	</script>
+
+</body>
+</html>

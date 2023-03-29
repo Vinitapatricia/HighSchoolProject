@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interactive And Stop: Alarm</title>
+	<script type="text/javascript">
+		var cnt = 0;
+
+		let doHomework = () =>{
+
+			alert("You need to do your homework!")
+		}
+
+		let stopAlarm = () =>{
+			clearTimeout(alarm);
+			document.querySelector("#status").innerHTML = "Off"
+			document.querySelector("button").innerHTML = "Start alarm"
+		}
+
+		let onAlarm = () =>{
+			document.querySelector("#status").innerHTML = "On"
+			document.querySelector("button").innerHTML = "Stop alarm"
+			let alarm = setTimeout(doHomework, 5000);
+		}
+
+		let checkAlarm = () =>{
+			if(cnt %2 == 0){
+				stopAlarm();
+			}else{
+				onAlarm();
+			}
+			cnt +=1;
+			console.log(cnt);
+		}
+
+		let alarm = setTimeout(doHomework, 5000);
+	</script>
+</head>
+<body>
+	<h1>Alarm <span id = "status">On</span></h1>
+	<button onclick="checkAlarm()">Stop Alarm</button>
+</body>
+</html>

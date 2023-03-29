@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hai!</title>
+
+	<!-- Jquery Lib -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- end Jquery -->
+
+	<style type="text/css">
+		button{
+			margin-left: 50px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		let naurr = () =>{
+			let x = Math.floor(Math.random()*700);
+			let y = Math.floor(Math.random()*500);
+			$('.nobutton').offset({left : x, top : y});
+			console.log("click")
+		}
+
+		let yashh = () =>{
+			alert("Beneran nich :3");
+			alert("Love U");
+		}
+	</script>
+
+</head>
+<body>
+	<h1>Hai kamu!!</h1>
+	<img src="https://cdn.discordapp.com/attachments/821315761775181848/941600876722806815/luvv.jpg" alt="love u" width="150" height="150">
+	<h1>Mau gak jadi pacar gue?</h1>
+	<button onclick="yashh()">YA</button>
+	<button class="nobutton" onclick="naurr()">TIDAK</button>
+
+</body>
+</html>
