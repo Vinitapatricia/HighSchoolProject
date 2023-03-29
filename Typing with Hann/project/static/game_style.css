@@ -1,0 +1,16 @@
+body {
+	margin: 20px;
+	padding: 0;
+	background-color: #f0f0f0;
+	height: 100%;
+	overflow: hidden;
+}
+
+#canvas {
+	background-color: #224B0C;
+}
+.container{
+	display: flex;
+	justify-content: center;
+}
+
