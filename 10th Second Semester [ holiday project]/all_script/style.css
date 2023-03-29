@@ -1,0 +1,7 @@
+#canvas {
+	background-color: saddlebrown;
+}
+.container{
+	display: flex;
+	justify-content: center;
+}
