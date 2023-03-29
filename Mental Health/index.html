@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Apps</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script type="text/javascript" src="static/script.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-item logo">
+                <h4>MENTAL HELP</h4>
+            </div>
+
+            <ul class="nav-item menu-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#content">Content</a></li>
+            </ul>
+
+            <a href="#" class="nav-item btn-login">Login</a>
+
+            <div class="nav-item menu-toggle">
+                <span class="menu-toggle-item"></span>
+                <span class="menu-toggle-item"></span>
+                <span class="menu-toggle-item"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="home">
+        <div class="home-image">
+            <img src="static/img/bird1.png" id="bird1" style="z-index: -1;">
+            <img src="static/img/bird2.png" id="bird2" style="z-index: -1;">
+        </div>
+        
+        <div class="home-text">
+            <h1 id="desc">Love Yourself</h1>
+            <a href="#" class="home-btn" id="btn">Explore</a>
+        </div>
+
+        <div class="home-image">
+            <img src="static/img/forest.png" id="forest">
+            <img src="static/img/rocks.png" id="rocks">
+            <img src="static/img/water.png" id="water">
+        </div>
+  
+    </section>
+    
+
+    <section class="about" id="about">
+        <h1>ABOUT</h1>
+
+            <div class="aboutUs">
+                <img src="static/img/about us.jpg">
+                <div class="aboutUs-text">
+                    <h2>About Us</h2>
+                    <p>We are Devan and Vinita. Both of us are high school student from Indonesia who are aware of mental health in our country. We are currently making projects to help society in increasing their mental awareness towards the technology advances in digital era</p>
+                </div>
+                
+            </div>
+
+            <div class="aboutPro">
+                <div class="aboutPro-text">
+                    <h2>About Our Projects</h2>
+                    <p>This web focuses in providing our reader the knowledge of mental illnesses that are currently happening in the world. This web also provide a test that you can take to help determind your mental health. Although this test may not be totally accurate, we are pretty sure that by enlightening people with mental awareness, we hope we can steadly increase world average mental health.</p>
+                </div>
+                
+            </div>
+
+    </section>
+
+    <div class="divider-contacts"></div>
+
+    <section class="contacts" id="contacts">
+        <h1>CONTACTS</h1>
+
+        <div class="contacts-item">
+            <div class="instagram">
+                <img src="static/img/instagram-logo.png">
+                <div class="instagram-text">
+                    <h2>Instagram</h2>
+                    <a href="#">Follow Us</a>
+                </div>
+            </div>
+
+            <div class="whatsapp">
+                <img src="static/img/whatsapp3.png">
+                <div class="whatsapp-text">
+                    <h2>Whatsapp</h2>
+                    <a href="#">+62 888-888-888</a>
+                </div>
+            </div>
+
+            <div class="twitter">
+                <img src="static/img/twitter-logo.png">
+                <div class="twitter-text">
+                    <h2>Twitter</h2>
+                    <a href="#">Follow Us</a>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <div class="divider-content"></div>
+
+    <section class="content" id="content">
+        <h1>CONTENT</h1>
+
+        <div class="depression">
+            <div class="depression-text">
+                <h2>Depression</h2>
+                <p>Depression is a common mental health condition worldwide, with the 2017 Global Burden Disease Study estimating that over 264 million people live with some form of depression. We all feel down or have a bad day occasionally. But a persistent feeling of sadness, dread or hopelessness is not healthy, and could be a sign of depression.</p>
+                <a href="#">Read More About Depression</a>
+            </div>
+            <img src="static/img/depression.gif">
+        </div>
+
+
+        <div class="anxiety">
+            <img src="static/img/anxiety.gif">
+            <div class="anxiety-text">
+                <h2>Anxiety</h2>
+                <p>Everyone has feelings of anxiety at some point in their life. It’s normal to feel anxious before a test, on the first day of work or in a new social situation. But when feeling anxious is relentless and impacts your daily life and decisions you make, it may be time to speak with a mental health professional.</p>
+                <a href="#">Read More About Anxiety</a>
+            </div>
+        </div>
+
+        <div class="mental">
+            <div class="mental-text">
+                <h2>Strengthening Your Mental Fitness</h2>
+                <p>Life is not without challenges, and we all feel stress and anxiety at times. Learning how to effectively manage stress and implementing practices of self-care may improve mental health and well-being.</p>
+                <a href="#">Get started</a>
+            </div>
+            <img src="static/img/mental.gif">
+        </div>
+
+    </section>
+
+    <footer>
+        <h2>Mental Health</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex incidunt ipsa quasi aperiam dolorum alias facilis nihil culpa voluptas laboriosam.</p>
+    </footer>
+
+    <script type="text/javascript">
+        let text = document.getElementById("desc")
+        let bird1 = document.getElementById("bird1")
+        let bird2 = document.getElementById("bird2")
+        let forest = document.getElementById("forest")
+        let rocks = document.getElementById("rocks")
+        let water = document.getElementById("water")
+        let btn = document.getElementById("btn")
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+
+            if(value < 400){
+                text.style.marginBottom = value * 1.5 + "px";
+                btn.style.marginTop = value * 1.5 + "px";
+            }
+            
+            
+            bird1.style.top = value *-1+'px';
+            bird1.style.left = value+'px';
+            bird2.style.top = value *-1+'px';
+            bird2.style.left = value * -1+'px';
+            rocks.style.top = value * -0.12 +'px'
+            forest.style.top = value * 0.25 +'px'
+        })
+    </script>
+    
+</body>
+</html>

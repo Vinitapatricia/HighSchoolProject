@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+:root{
+    --black :#333;
+    --blue : #094b65;
+    --darkblue : #0e1b61;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: #c5dee0;
+}
+
+/* NAV CONFIG */
+    header{
+        margin-top: 10px;
+        height: 50px;
+    }
+
+    header nav{
+        display: flex;
+        color: var(--blue);
+        justify-content: space-around;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+    }
+
+    header nav ul{
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    header nav ul li a{
+        color: var(--black);
+        text-decoration: none;
+        font-size: 0.8em;
+    }
+
+    header nav ul li a:hover{
+        font-size: 0.8em;
+        background: var(--blue);
+        color: white;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 30px;
+    }
+
+    .btn-login{
+        background: var(--blue);
+        color: white;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 30px;
+        transition: 1s;
+    }
+
+    .btn-login:hover{
+        transform: scale(1.05);
+    }
+
+/* toggle */
+    .menu-toggle{
+        display: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle span{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s aese-in-out;
+        transition: all 0.3s aese-in-out;
+        background: var(--blue);
+        z-index: 3;
+    }
+
+
+/*home*/
+    section.home{
+        position: relative;
+        width: 100%;
+        height: 120vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    section.home .home-text{
+        margin-bottom: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 100;
+    }
+
+    section.home .home-text h1{
+        color: var(--black);
+        font-size: 4.5em;
+        text-align: center;
+    }
+
+    .home-btn{
+        letter-spacing: 1px;
+        background: white;
+        color: var(--blue);
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 30px;
+        transition: 2s;
+    }
+
+
+    section.home .home-image img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+    }
+
+    
+    .home::before{
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background: linear-gradient(to top, var(--blue), transparent);
+        z-index: 10;
+    }
+
+
+div.main{
+    width: 400px;
+    margin: 130px auto 0px auto;
+}
+
+h2{
+    text-align: center;
+    padding: 20px;
+}
+
+div.register{
+    background-color: #c5dee0;
+    width: 30rem;
+    height: 22rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px var(--black);
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: -50px;
+}
+
+form#register{
+    margin-left: 80px;
+}
+
+.input{
+    width: 200px;
+    border: 1px solid white;
+    border-radius: .5rem;
+    outline: 0;
+    padding: 7px;
+    margin-left: -5px;
+}
+
+input#submit{
+    margin: 10px;
+    background-color: var(--blue);
+    border: 0;
+    color: white;
+    width: 6rem;
+    height: 1.5rem;
+    border-radius: 10px;
+}
+
+.muted, .muted a{
+    color: var(--blue);
+    font-size: .8rem;
+}
+
+.fmuted a{
+    color: #706e6e;
+
+    font-size: .8rem;
+}
+
+footer h2{
+    font-weight: bold;
+    color: var(--blue);
+    padding-top: 3%;
+    padding-left: 10%;
+}
+
+footer p{
+    width: 200px;
+    color: black;
+    padding-left: 11%;
+    padding-bottom: 15%;
+}
+
+/* TABLET */
+    @media screen and (max-width: 912px) and (min-width: 577px){
+        .content p{
+            font-size: 80%;
+        }
+
+        /* contacts */
+            .contacts-item{
+                padding-left: 5%;
+            }
+
+
+
+        /* depression */
+            .content .depression img{
+                margin-right: 10%;
+            }
+
+            .content .depression .depression-text{
+                width: 80%;
+            }
+
+            .content .depression .depression-text p{
+                width: 100%;
+            }
+
+        /* anxiety */
+            .content .anxiety .anxiety-text p{
+                width: 80%;
+            }
+
+        /* mental */
+            .content .mental img{
+                margin-right: 10%;
+            }
+
+            .content .mental .mental-text{
+                width: 80%;
+            }
+
+            .content .mental .mental-text p{
+                width: 100%;
+            }
+    }
+
+
+/* MOBILE */
+
+    @media screen and (max-width: 576px) {
+        /* navigation */
+
+            .menu-toggle{
+                display: block;
+            }
+
+            .menu-toggle.active span:nth-child(2){
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(1){
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle.active span:nth-child(3){
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            header nav ul.menu-nav{
+                position: absolute;
+                top: 4.5rem;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--blue);
+                width: 100%;
+                text-align: center;
+                transition: 0.7s;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 250px;
+                opacity: 0;
+                z-index: 100;
+            }
+
+            header nav ul.menu-nav.active{
+                /*top: 70px;*/
+                opacity: 1;
+            }
+
+            .menu-nav li a{
+                color: white;
+            }
+
+            .icons-nav{
+                margin-left: 0.5rem;
+            }
+
+            .icons-nav a{
+                font-size: 1.2rem;
+            }
+
+            .icons-nav button{
+                font-size: 1.2rem;
+            }
+
+        /* contacts */
+
+            .contacts-item{
+                display: block;
+                justify-content: none;
+                padding-left: 0;
+            }
+
+            .instagram{
+                margin-bottom: 10%;
+            }
+
+            .whatsapp{
+                padding-left: 15%;
+                margin-bottom: 10%;
+            }
+
+            .twitter{
+                padding-left: 15%;
+            }
+
+        /* content */
+            .content{
+                overflow-x: hidden;
+            }
+
+            /* depression */
+                .content .depression{
+                    flex-direction: column-reverse;
+                }
+
+                .content .depression img{
+                    margin: auto;
+                }
+
+                .content .depression .depression-text{
+                    padding-left: 4%;
+                    margin: auto;
+                }
+
+
+                .content .depression .depression-text p{
+                    padding-right: 0;
+                    width: 250px;
+                }
+
+                .content .depression .depression-text a{
+                    margin: auto;
+                    margin-top: 10px;
+                }
+
+            /* anxiety */
+                .content .anxiety{
+                    flex-direction: column;
+                }
+
+                .content .anxiety img{
+                    margin: auto;
+                }
+
+                .content .anxiety .anxiety-text{
+                    padding-left: 4%;
+                    margin: auto;
+                }
+                .content .anxiety .anxiety-text p{
+                    padding-right: 0;
+                    width: 250px;
+                }
+
+                .content .anxiety .anxiety-text a{
+                    margin: auto;
+                    margin-top: 10px;
+                }
+
+            /* mental */
+                .content .mental{
+                    flex-direction: column-reverse;
+                }
+
+                .content .mental img{
+                    margin: auto;
+                }
+
+                .content .mental .mental-text{
+                    padding-left: 4%;
+                    margin: auto;
+                }
+
+                .content .mental .mental-text h2{
+                    font-size: 90%;
+                }
+
+                .content .mental .mental-text p{
+                    padding-right: 0;
+                    width: 250px;
+                }
+
+                .content .mental .mental-text a{
+                    margin: auto;
+                    margin-top: 10px;
+                }
+
+        /* about */
+
+            .about .aboutUs{
+                flex-direction: column;
+            }
+
+            .about .aboutUs{
+                margin-left: 5%;
+            }
+
+            .about .aboutUs .aboutUs-text h2{
+                margin-top: 3%;
+            }
+
+            .about .aboutPro{
+                margin-left: 5%;
+            }
+
+            .about .aboutPro .aboutPro-text p{
+                margin-left: 0;
+                margin-right: 5%;
+            }
+    }
+
+    

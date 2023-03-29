@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Apps</title>
+    {% block jscss %}
+    {% endblock jscss %}
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-item logo">
+                <h4>MENTAL HELP</h4>
+            </div>
+
+            <ul class="nav-item menu-nav">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('index') }}#about">About</a></li>
+                <li><a href="{{ url_for('index') }}#contacts">Contacts</a></li>
+                <li><a href="{{ url_for('index') }}#content">Content</a></li>
+            </ul>
+
+            <a href="{{ url_for('login') }}" class="nav-item btn-login">Login</a>
+
+            <div class="nav-item menu-toggle">
+                <span class="menu-toggle-item"></span>
+                <span class="menu-toggle-item"></span>
+                <span class="menu-toggle-item"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    {% block main %}
+
+    {% endblock main %}
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block jscss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='d_style.css')}}">
+    <script type="{{ url_for('static', filename='script.css')}}"></script>
+{% endblock jscss %}
+
+{% block main %}
+    <div class="depression">
+        <img src="static/img/depression.gif">
+        <div class="depression-text">
+            <h2>Depression</h2>
+            <p>Depression is a common mental health condition worldwide, with the 2017 Global Burden Disease Study estimating that over 264 million people live with some form of depression. We all feel down or have a bad day occasionally. But a persistent feeling of sadness, dread or hopelessness is not healthy, and could be a sign of depression.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eligendi quo possimus minus dolores distinctio aliquid iste magnam iusto ipsa necessitatibus consequatur delectus voluptatibus rerum, sunt, soluta mollitia fuga velit voluptas ipsum. Neque, veniam magnam quia similique illo eligendi? Sint facere recusandae est aut vero quidem quas, eligendi laudantium, soluta reprehenderit quia odio qui, consequatur temporibus nam amet vel ad sed officia mollitia saepe quaerat suscipit neque corporis. Adipisci corporis provident beatae expedita, quod animi quam eaque aliquam quae ut dicta debitis voluptate amet, neque eveniet itaque. Quo aperiam asperiores optio officiis ipsum? Quae, culpa perferendis itaque adipisci cum fugiat qui quia earum recusandae reprehenderit, corporis molestiae aut. Nesciunt vel omnis, excepturi doloribus vero laborum deserunt, suscipit enim perspiciatis provident exercitationem delectus culpa nisi placeat eum molestiae aspernatur voluptates vitae minus libero cum. Minima, excepturi corrupti? Perspiciatis quaerat tempore officiis magnam quidem. Voluptas quibusdam distinctio tempora, quam alias eius molestiae in, reiciendis fuga odio nesciunt ex expedita esse dolore deserunt corrupti necessitatibus modi delectus placeat quod ipsa. Deserunt odit esse illum odio sint officia provident omnis. Neque quas recusandae blanditiis cupiditate adipisci, aperiam officiis doloribus officia aliquam expedita aspernatur non perferendis eos odio necessitatibus nostrum ratione a illum nihil culpa.</p>
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </div>
+        
+    </div>
+
+    <div class="divider-footer"></div>
+
+    <footer>
+        <div class="socialmedia">
+            <div class="instagram">
+                <img src="static/img/instagram-logo.png">
+                <p>mentalhealth.io</p>
+            </div>
+            <div class="whatsapp">
+                <img src="static/img/whatsapp3.png">
+                <p>+62 8888-8888-8888</p>
+            </div>
+            <div class="twitter">
+                <img src="static/img/twitter-logo.png">
+                <p>mentalmental</p>
+            </div>
+        </div>
+
+        <div class="address">
+            <div class="alamat">
+                <p>
+                    Jalan Kembang Berapi No.207/09<br>
+                    Palembang, Sumatera Selatan
+                </p>
+            </div>
+        </div>
+    </footer>
+{% endblock main %}

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+:root{
+    --black :#333;
+    --blue : #094b65;
+    --darkblue : #0e1b61;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: #c5dee0;
+}
+
+/* NAV CONFIG */
+    header{
+        margin-top: 10px;
+        height: 50px;
+    }
+
+    header nav{
+        display: flex;
+        color: var(--blue);
+        justify-content: space-around;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+    }
+
+    header nav ul{
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    header nav ul li a{
+        color: var(--black);
+        text-decoration: none;
+        font-size: 0.8em;
+    }
+
+    header nav ul li a:hover{
+        font-size: 0.8em;
+        background: var(--blue);
+        color: white;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 30px;
+    }
+
+    .btn-login{
+        background: var(--blue);
+        color: white;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 30px;
+        transition: 1s;
+    }
+
+    .btn-login:hover{
+        transform: scale(1.05);
+    }
+
+/* toggle */
+    .menu-toggle{
+        display: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle span{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s aese-in-out;
+        transition: all 0.3s aese-in-out;
+        background: var(--blue);
+        z-index: 3;
+    }
+
+/* depression */
+
+        .depression{
+            display: flex;
+            flex-direction: column;
+            padding: 3% 0;
+        }
+
+        .depression img{
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        .depression .depression-text{
+            padding-left: 15%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: space-between;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .depression .depression-text h2{
+            font-weight: bold;
+            color: var(--darkblue);
+            padding-top: 3%;
+        }
+
+        .depression .depression-text p{
+            color: var(--black);
+            padding-top:2%;
+            width: 80%;
+            text-align: justify;
+        }
+
+        .depression .depression-text a{
+            color: var(--darkblue);
+            text-decoration: none;
+            background-color: white;
+            padding: 10px 15px;
+            margin-top: 5%;
+            margin-left: 35%;
+            border-radius: 30px;
+        }
+
+        .depression .depression-text a:hover{
+            color: white;
+            background-color: var(--darkblue);
+        }
+
+    footer {
+        display: flex;  
+        text-align: right;
+        justify-content: space-between;
+        background-color: var(--blue);
+    }
+
+    .socialmedia {
+        position: relative;
+        padding-bottom: 10px;
+        width: 300px;
+        margin-left: 15%;
+    }
+
+    .socialmedia p{
+        color: white;
+        padding-bottom: 5px;
+    }
+
+    .contacts-item{
+        display: flex;
+        padding-left: 10%;
+        justify-content: space-evenly;
+        padding-top: 3%;
+    }
+    
+    .socialmedia .instagram{
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .socialmedia .instagram p{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: space-between;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .socialmedia .instagram img{
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        margin-left: 15%;
+        border-radius: 15px;
+    }
+
+    .socialmedia .whatsapp{
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .socialmedia .whatsapp p{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: space-between;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .socialmedia .whatsapp img{
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        margin-left: 15%;
+        border-radius: 15px;
+    }
+
+    .socialmedia .twitter{
+        display: flex;
+    }
+
+    .socialmedia .twitter p{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: space-between;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .socialmedia .twitter img{
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        margin-left: 15%;
+        border-radius: 15px;
+    }
+
+    .address {
+        width: 300px;
+        position: relative;
+        padding-bottom: 10px;
+        width: 300px;
+        margin-right: 15%;
+
+    }
+
+    .address p{
+        color: white;
+        padding-bottom: 10px;
+    }
