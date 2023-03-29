@@ -1,0 +1,222 @@
+{% extends "layout.html" %}
+
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='product-detail_style.css')}}">
+{% endblock style %}
+
+{% block js %}
+	<script type="text/javascript" src="{{url_for('static', filename='product-detail_script.js')}}"></script>
+{% endblock js %}
+
+
+{% block content %}
+
+	<header>
+		<nav>
+			<a href="{{url_for('index')}}" class="nav-item logo">Viotá<span>.</span></a>
+
+			<ul class="nav-item menu-nav">
+				<li><a href="{{url_for('index')}}" class="nav-item nav-link">Home</a></li>
+				<li><a href="{{url_for('index')}}#about" class="nav-item nav-link">About</a></li>
+				<li><a href="{{url_for('product')}}" class="nav-item nav-link">Product</a></li>
+				<li><a href="{{url_for('index')}}#review" class="nav-item nav-link">Review</a></li>
+				<li><a href="{{url_for('index')}}#contact" class="nav-item nav-link">Contact Us</a></li>
+			</ul>
+
+			<div class="nav-item icons-nav">
+				<!-- <a href="#wishList"class="fas fa-search"></a> -->
+				<a href="{{url_for('wishlist_page')}}" class="fas fa-heart wishlist"></a>
+				<a href="{{url_for('cart')}}" class="fas fa-shopping-cart"></a>
+				{% if current_user.is_authenticated %}
+					<a href="{{url_for('profile')}}" class="fas fa-user"></a>
+				{% else %}
+					<a href="{{url_for('login')}}" class="fas fa-user"></a>
+				{% endif %}
+			</div>
+
+			<div class="nav-item menu-toggle">
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+			</div>
+			
+		</nav>
+	</header>
+
+	<section class="producth">
+		
+		<div class="producth-content">
+			<div class="producth-content-item image">
+				<img src="{{url_for('static', filename = 'img/products/')}}{{product.image}}" alt="">
+			</div>
+
+			<div class="producth-content-item text">
+				<div class="producth-content-item text-item header">
+					<h1>{{ product.name }}</h1>
+
+					{% if wish != None %}
+
+						<a href="{{url_for('wishlist', product_id=product.id)}}" class="fas fa-heart WishList active"></a>
+
+					{% else %}
+						<a href="{{url_for('wishlist', product_id=product.id)}}" class="fas fa-heart WishList"></a>
+
+					{% endif %}
+
+				</div>
+				<h2>${{ product.price }}</h2>
+
+				<form method="POST" action="">
+				{{ form.hidden_tag() }}
+					<div class="form-group">
+						{{ form.quantity.label(class="label") }}
+						<br>
+						{% if form.quantity.errors %}
+
+							{{ form.quantity(class="input") }}
+
+							<div class="invalid-feedback">
+								
+								{% for error in form.quantity.errors %}
+
+									<span>{{ error }}</span>
+
+								{% endfor %}
+
+							</div>
+
+						{% else %}
+
+							{{ form.quantity(class="input") }}
+
+						{% endif %}
+
+						{{ form.submit() }}
+					</div>
+
+					<h3>Product Detail</h3>
+					<p>{{ product.desc }}</p>
+				</div>
+			</form>
+
+			<!-- <div class="producth-content-item wishList">
+				<a class="fas fa-heart" href="{{url_for('login')}}"><span>Add to WishList<span></a>
+			</div> -->
+
+		</div>
+
+		<!-- <div class="other-product">
+
+			<h2>Other Product</h2>
+
+			{% for product in products %}
+				<div class="producth-content-item box">
+
+					<div class="producth-content-item wishList">
+						<a class="fas fa-heart"></a>
+					</div>
+
+					<div class="producth-content-item box-item image">
+						<a href="#{{ product.id }}"><img src="static/img/products/{{product.image}}" alt=""></a>
+					</div>
+					
+
+					<div class="producth-content-item box-text">
+						
+						<div class="producth-content-item box-text-item title-product">
+							<h3>{{ product.name }}</h3>
+							<span>{{ product.price }}</span>
+						</div>
+
+					</div>
+				</div>
+			{% endfor %}
+
+			
+		</div>
+		 -->
+			
+
+	</section>
+
+
+
+
+
+	<footer id="contact">
+		
+		<div class="footer-container">
+
+			<div class="footer-container-item ashop">
+				<h2>Viotá<span>.</span></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<div class="footer-container-item social">
+					<a href="#" class="fa-brands fa-youtube"></a>
+					<a href="#" class="fa-brands fa-facebook"></a>
+					<a href="#" class="fa-brands fa-instagram"></a>
+					<a href="#" class="fa-brands fa-twitter"></a>
+					<a href="#" class="fa-brands fa-pinterest"></a>
+					<a href="#" class="fa-brands fa-github"></a>
+				</div>
+				
+			</div>
+
+			<div class="footer-container-item box">
+				<h3>Quick Links</h3>
+				<a href="#">home</a>
+				<a href="#about">about</a>
+				<a href="#profile">products</a>
+				<a href="#review">review</a>
+				<a href="#contact">contact</a>
+			</div>
+
+			<div class="footer-container-item box">
+				<h3>Extra Links</h3>
+				<a href="#profile">Profile</a>
+				<a href="#cart">Cart</a>
+				<a href="#wishlist">Wish List</a>
+			</div>
+
+			<div class="footer-container-item box" id="contactinfo">
+				<h3>Contact Info</h3>
+				<a href="#">+123-456-7890</a>
+				<a href="#">abcdefghily@gmail.com</a>
+				<a href="#">Jakarta, Indonesia - 77777</a>
+				<img src="{{url_for('static', filename = 'img/footer/payment.png')}}" alt="Payment">
+			</div>
+			
+		</div>
+
+		<div class="footer-copyright">
+			Copyright © 2022 Vin| All Rights Reserved.
+
+			<ul class="footer-copyright-item link">
+				<li><a href="#">Terms Of Use</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+
+			</ul>
+
+		</div>
+	</footer>
+
+	{% if add%}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.18/sweetalert2.all.js"></script>
+		<script>
+			Swal.fire({
+				title: 'Product added to cart',
+				width: 600,
+				padding: '3em',
+				background: '#c4ebb7',
+				showConfirmButton: false,
+				timer: 1500
+			})
+
+		</script>
+
+	{% endif %}
+
+{% endblock content%}

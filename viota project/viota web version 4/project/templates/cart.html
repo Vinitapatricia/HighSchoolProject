@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block style %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='cart_style.css')}}">
+{% endblock style %}
+
+{% block js %}
+	<script type="text/javascript" src="{{url_for('static', filename='cart_script.js')}}"></script>
+{% endblock js %}
+
+{% block content %}
+	<header>
+		<nav>
+			<a href="{{url_for('index')}}" class="nav-item logo">Viotá<span>.</span></a>
+
+			<ul class="nav-item menu-nav">
+				<li><a href="{{url_for('index')}}" class="nav-item nav-link">Home</a></li>
+				<li><a href="{{url_for('index')}}#about" class="nav-item nav-link">About</a></li>
+				<li><a href="{{url_for('product')}}" class="nav-item nav-link">Product</a></li>
+				<li><a href="{{url_for('index')}}#review" class="nav-item nav-link">Review</a></li>
+				<li><a href="{{url_for('index')}}#contact" class="nav-item nav-link">Contact Us</a></li>
+			</ul>
+
+			<div class="nav-item icons-nav">
+				<!-- <a href="#wishList"class="fas fa-search"></a> -->
+				<a href="{{url_for('wishlist_page')}}" class="fas fa-heart wishlist"></a>
+				<a href="{{url_for('cart')}}" class="fas fa-shopping-cart"></a>
+				{% if current_user.is_authenticated %}
+					<a href="{{url_for('profile')}}" class="fas fa-user"></a>
+				{% else %}
+					<a href="{{url_for('login')}}" class="fas fa-user"></a>
+				{% endif %}
+			</div>
+
+			<div class="nav-item menu-toggle">
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+				<span class="menu-toggle-item"></span>
+			</div>
+			
+		</nav>
+	</header>
+
+	<div class="small-container">
+		<table>
+			<tr>
+				<th class="Product-header">Product</th>
+				<th>Unit Price</th>
+				<th>Quantity</th>
+				<th>Total Price</th>
+			</tr>
+
+			{% for product in products %}
+				<tr>
+					<td class="cart-info">
+						<img src="{{url_for('static', filename = 'img/products/')}}{{product.image}}" alt="">
+						<div>
+							<p>{{ product.name }}</p>
+							<a href="{{url_for('remove', product_id=product.product_id)}}">remove</a>
+						</div>
+						
+					</td>
+					<td>{{ product.price }}</td>
+					<td>
+						<div class="quan">
+							<a href="{{url_for('reduce', product_id=product.product_id)}}">-</a>
+							<p>{{product.quantity}}</p>
+							<a href="{{url_for('addmore', product_id=product.product_id)}}">+</a>
+						</div>	
+					</td>
+					<td>{{ product.price*product.quantity }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+
+		<div class="line"></div>
+
+		<div class="checkout">
+			<div class="sub1">
+				<h3>Sub-Total</h3>
+				<small>1 items</small>
+			</div>
+
+			<div class="sub2">
+				<h2>${{pr}}
+				</h2>
+			</div>
+
+			
+		</div>
+
+		<div class="btn">
+
+			<button>Checkout</button>
+			
+		</div>
+		
+			
+	</div>
+
+
+
+	
+
+{% endblock content %}

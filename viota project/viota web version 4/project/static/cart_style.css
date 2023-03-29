@@ -1,0 +1,272 @@
+:root{
+	--mainColor : #7a5e3c;
+	--white :#F8F7F3;
+	--black :#333;
+	--red : #a83f39;
+
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: .2s linear;
+	overflow-x: hidden;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	box-sizing: border-box
+}
+
+body{
+	text-transform: capitalize;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+	background-color: var(--white);
+}
+
+
+img {
+	vertical-align: middle;
+}
+
+section{
+	padding: 0 15% 0 10%;
+}
+
+header nav{
+	overflow: hidden;
+	display: flex;
+	position: fixed;
+	top: 0; right: 0;left: 0;
+	background: var(--white);
+	color: var(--white);
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0 .5rem 1rem rgba(1, 1, 1, 0.3);
+	padding: 1rem 1%;
+	z-index: 1000;
+}
+
+header nav ul{
+	display: flex;
+	list-style: none;
+	width: 40%;
+	justify-content: space-between;
+}
+
+/* logo nav*/
+	.logo{
+		display: flex;
+		font-size: 2rem;
+		color: var(--black);
+		font-weight: bolder;
+		padding-right: 4%;
+	}
+
+	.logo span{
+		color: var(--mainColor);
+	}
+
+/* menu nav*/
+	.menu-nav{
+		display: flex;
+		list-style: none;
+		width: 55%;
+		justify-content: space-between;
+	}
+
+	.menu-nav li a{
+		color: var(--mainColor);
+		font-size: 1.3rem;
+		transition: 0.7s ease;
+	}
+
+	.menu-nav li a:hover{
+		color: var(--black);
+	}
+
+/* icon nav */
+	.icons-nav{
+		align-items: center;
+		display: flex;
+		font-size: 1.4rem;
+	}
+
+	.icons-nav a{
+		color: var(--black);
+		margin-left: 1.3rem;
+	}
+
+/* toggle */
+	.menu-toggle{
+		display: none;
+		cursor: pointer;
+	}
+
+	.menu-toggle span{
+		display: block;
+		width: 25px;
+		height: 3px;
+		margin: 5px auto;
+		transition: all 0.3s aese-in-out;
+		transition: all 0.3s aese-in-out;
+		background: var(--mainColor);
+		z-index: 3;
+	}
+
+/* content */
+
+	.small-container{
+		display: flex;
+		align-content: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin-top: 6rem;
+	}
+
+	table{
+		width: 90%;
+		border-collapse: collapse;
+	}
+
+	th{
+		/*display: flex;*/
+		text-align: center;
+		padding: .6rem;
+		color: var(--white);
+		background-color: var(--mainColor);
+		font-weight: normal;
+		font-size: 1.2rem;
+	}
+
+	td{
+		padding: .5rem .3rem;
+		background-color: #ffff;
+		color: var(--black);
+		text-align: center;
+	}
+
+	.Product-header{
+		padding-right: 5rem;
+	}
+
+
+	.cart-info{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		text-align: left;
+	}
+
+	.product .cart-info p{
+		color: var(--black);
+		font-size: 1.3rem;
+	}
+
+
+
+	td input{
+		width: 3rem;
+		height: 30px;
+		padding: 5px;
+		border: 1px solid var(--mainColor);
+		background-color: rgba(140, 109, 50, .1);
+		color: var(--black);
+
+	}
+
+	td a{
+		color: var(--mainColor);
+		font-size: 1rem;
+	}
+
+	td img{
+		width: 7rem;
+		height: 7rem;
+		margin-right: 10px;
+	}
+
+	.line{
+		background-color: var(--mainColor);
+		width: 90%;
+		height: 2px;
+		margin-top: 2rem;
+	}
+
+	.small-container .checkout{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-top: .8rem;
+		margin-right: 3rem;
+	}
+
+	.small-container .checkout .sub1{
+		margin-right: 20px;
+	}
+
+	.small-container .checkout .sub1 h3{
+		color: var(--mainColor);
+	}
+
+	.small-container .checkout .sub1 small{
+		color: grey;
+	}
+
+	.small-container .checkout .sub2{
+		margin-right: 15px;
+	}
+
+	.small-container .checkout .sub2 h2{
+		color: var(--black);
+		font-weight: lighter;
+	}
+	
+	.btn{
+		display: flex;
+		justify-content: flex-end;
+
+
+	}
+
+	button{
+		margin: 1rem;
+		background-color: var(--mainColor);
+		border: 0;
+		color: var(--white);
+		width: 14.5rem;
+		height: 2rem;
+		border-radius: 15px;
+		font-size: 1rem;
+	}
+
+	.quan{
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		margin: 0;
+		padding: 0;
+		background-color: #ffff;
+		color: var(--black);
+		text-align: left;
+		height: 100px;
+	}
+
+	.quan a{
+		background-color: var(--mainColor);
+		border: 0;
+		color: var(--white);
+		padding: .5rem;
+		width: 2rem;
+		border-radius: 15px;
+		font-size: 1rem;
+		text-align: center;
+		margin: 0 1rem;
+	}
+
+/* mobile mode */
+	@media screen and (max-width:  740px){
+
+	}
